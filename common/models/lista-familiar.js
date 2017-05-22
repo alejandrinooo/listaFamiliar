@@ -22,4 +22,27 @@ module.exports = function(Listafamiliar) {
 		})
 	});
 
+	Listafamiliar.afterRemote('create', function(context, listafamiliar, next) {
+		
+		var app = require('../../server/server.js')
+		var Usuario = app.models.Usuario;
+
+		console.log(listafamiliar);
+
+		Usuario.findById(context.req.accessToken.userId, function(err, usuario) {
+			if (err) next(err);
+			
+			 usuario.listaFamiliarId=listafamiliar.id ;
+			
+		usuario.save(function(err, usserid) {
+			if (err) throw err;
+			console.log('asociado');
+			next();
+		});
+		})
+
+
+
+	});
+
 };
