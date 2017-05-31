@@ -30,7 +30,8 @@ module.exports = function(app) {
               apellidos: 'unsgaard',
               nombre: 'andre',
               email: 'aunsgaard@murciaeduca.es',
-              password: 'password'
+              password: 'password',
+               listaFamiliarId:'1'
             }], function(err, users) {
               if (err) throw err;
 

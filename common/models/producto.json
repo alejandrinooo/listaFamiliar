@@ -42,7 +42,68 @@
       "principalType": "ROLE",
       "principalId": "Listamember",
       "permission": "ALLOW"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "Listamember",
+      "permission": "ALLOW",
+      "property": "limpiarlista"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "permisocomprar",
+      "permission": "ALLOW",
+      "property": "limpiarproducto"
     }
   ],
-  "methods": {}
+  "methods": {
+    "limpiarlista": {
+      "accepts": [
+        {
+          "arg": "ctx",
+          "type": "object",
+          "required": false,
+          "description": "",
+          "http": {
+            "source": "context"
+          }
+        }
+      ],
+      "returns": [
+        {
+          "arg": "productos",
+          "type": "array",
+          "root": true,
+          "description": "lista de productos modificado"
+        }
+      ],
+      "description": "cambiar atributo de todos los productos para ponerlos como comprados",
+      "http": [
+        {
+          "path": "/limpiar",
+          "verb": "put"
+        }
+      ]
+    },
+    "prototype.limpiarproducto": {
+      "accepts": [],
+      "returns": [
+        {
+          "arg": "producto",
+          "type": "boolean",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "limpiando un producto en concreto",
+      "http": [
+        {
+          "path": "/limpiarproduct",
+          "verb": "put"
+        }
+      ]
+    }
+  }
 }
