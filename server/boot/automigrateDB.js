@@ -25,12 +25,22 @@ module.exports = function(app) {
               email: 'alberto.sierra@murciaeduca.es',
               password: 'password',
               listaFamiliarId:'1'
-            },{
+            },
+            {
+              username: 'alex',
+              apellidos: 'alexu',
+              nombre: 'aaaa',
+              email: 'alejandro.asensio@murciaeduca.es',
+              password: 'password',
+              listaFamiliarId:'1'
+            },
+            {
               username: 'andreunsgaard',
               apellidos: 'unsgaard',
               nombre: 'andre',
               email: 'aunsgaard@murciaeduca.es',
-              password: 'password'
+              password: 'password',
+              listaFamiliarId:'1'
             }], function(err, users) {
               if (err) throw err;
 
